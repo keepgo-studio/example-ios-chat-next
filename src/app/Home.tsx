@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <>
-      <nav className="px-3 h-12 bg-primary-bg-in flex items-center justify-between border-b-black border-b">
+      <nav className="sticky top-0 left-0 px-3 h-12 bg-primary-bg-in flex items-center justify-between border-b-black border-b">
         <Image
           src={theme === "light" ? "/apple-logo.black.svg" : "/apple-logo.svg"}
           width={16}
@@ -23,20 +23,25 @@ export default function Home() {
         <p className="text-sm font-light">iOS Chat Example</p>
       </nav>
 
-      <section className="max-w-screen-lg m-auto p-20">
-        <h1 className="font-bold text-2xl">Example 1. Requesting</h1>
+      <section className="max-w-screen-lg m-auto p-16">
+        <h1 className="font-bold text-2xl">Example 1. Requesting image and 'Focus mode'</h1>
 
         <div className="h-6" />
 
         <article className="border rounded-3xl p-6 bg-primary-bg-in">
           <p>
-            Answer to chat outside of component 
+            This example is the explanation for how to...
             <br/>
             <br/>
-            If chat screen is off and the server sent response, you can check unread message counts will appear
+            1. Communicate with chat from everywhere of the project
+            <br/>
+            2. show unread message counts
+            <br/>
+            <br/>
+            Furthermore, If the message contain image, {`<ios-chat />`} support the Focus mode which will size up the image for focus
           </p>
 
-          <div className="h-4" />
+          <div className="h-8"/>
 
           <div className="flex justify-end">
             <button
@@ -47,26 +52,27 @@ export default function Home() {
                 try {
                   handler.startAnswerLoading("chat");
 
-                  // processing
+                  // example, requesting data
                   await delay(2000);
 
                   await handler.endAnswerLoading("chat");
 
                   handler.answerChat("chat", {
-                    type: "text",
-                    content: "iPhone 15 Pro image - Apple",
-                  });
-                  handler.answerChat("chat", {
                     type: "img",
                     content:
                       "https://www.apple.com/v/iphone-15/c/images/overview/contrast/iphone_15pro__ezc4eofw13yq_large.jpg",
+                  });
+
+                  handler.answerChat("chat", {
+                    type: "text",
+                    content: "iPhone 15 Pro image - Apple",
                   });
                 } catch {
                   alert("current chat room is blocked");
                 }
               }}
             >
-              Request data from Server
+              Request data from server
             </button>
           </div>
         </article>
@@ -80,9 +86,9 @@ export default function Home() {
         <div className="h-6" />
 
         <article className="border rounded-3xl p-6 bg-primary-bg-in">
-          <p>Toggle button to set theme</p>
+          <p>Toggle button to set theme (dark or light)</p>
 
-          <div className="h-4" />
+          <div className="h-8" />
 
           <div className="flex justify-between items-center">
             <p className="text-sm mr-4">
@@ -110,9 +116,18 @@ export default function Home() {
         <div className="h-6" />
 
         <article className="border rounded-3xl p-6 bg-primary-bg-in">
-          <p>Even though user reload the page, messages will remain</p>
+          <p>
+            This example is the explanation for...
+            <br/>
+            <br/>
+            1. how to track recent message using addRoomListener( );
+            <br/>
+            2. how to save messages
+            <br/>
+            <span className="w-[1em] inline-block"/>Click Chat icon bottom right of the screen and check the saved messages 😎
+          </p>
 
-          <div className="h-4" />
+          <div className="h-8" />
 
           <div className="flex justify-end items-center">
             <button
@@ -128,7 +143,7 @@ export default function Home() {
         <Divider />
         <div className="h-12" />
 
-        <h1 className="font-bold text-2xl">Example 4. Dynamic import</h1>
+        <h1 className="font-bold text-2xl">Playground - Echo Chat</h1>
 
         <div className="h-6" />
 
