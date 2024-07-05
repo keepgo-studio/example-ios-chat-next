@@ -142,7 +142,7 @@ export default function Chatbot() {
       >
         <Image
           className="aspect-square"
-          src="/apple-logo.svg"
+          src="./apple-logo.svg"
           alt="icon"
           width={32}
           height={32}

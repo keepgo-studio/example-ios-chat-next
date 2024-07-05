@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <nav className="sticky top-0 left-0 px-3 h-12 bg-primary-bg-in flex items-center justify-between border-b-black border-b">
         <Image
-          src={theme === "light" ? "/apple-logo.black.svg" : "/apple-logo.svg"}
+          src={theme === "light" ? "./apple-logo.black.svg" : "./apple-logo.svg"}
           width={16}
           height={16}
           alt="nav-icon"
