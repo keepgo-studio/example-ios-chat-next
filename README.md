@@ -1,5 +1,7 @@
 # Example for, ios chat + Next js
 
+demo: https://keepgo-studio.github.io/example-ios-chat-next/
+
 <p align="center">
   <img src="./public/example-nextjs.png" />
 </p>
@@ -24,7 +26,6 @@ With this example, you can experience how to
 5. handle dark mode
 
 6. save message data (in this project, using IndexedDB)
-
 
 # Must know before attach to Next js
 

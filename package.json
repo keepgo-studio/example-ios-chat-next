@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "idb": "^8.0.0",
-    "ios-chat": "file:../ios-chat",
+    "ios-chat": "^1.1.0",
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18"
