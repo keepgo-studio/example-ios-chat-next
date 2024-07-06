@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useTheme } from './ThemeContext';
-import { type ChatMessage, addRoomListener, answerChat, removeRoomListener } from 'ios-chat';
+import { type ChatMessage, addRoomListener, answerChat, initChat, removeRoomListener } from 'ios-chat';
 
 export default function ChatHostItem({
   clientIds
@@ -35,6 +35,16 @@ export default function ChatHostItem({
       if (msg.role === "sender") fireEcho(msg);
     });
   }, [clientIds, selectId])
+
+  useEffect(() => {
+    initChat(SERVER_CHAT_ID, [{
+      id: "none",
+      content: "Hello world!\nfor more information, visit\n https://github.com/keepgo-studio/ios-chat",
+      createdDatetime: Date.now(),
+      role: "receiver",
+      type: "text"
+    }]);
+  }, []);
 
   return (
     <section className='flex gap-4'>

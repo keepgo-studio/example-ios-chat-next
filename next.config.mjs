@@ -4,7 +4,7 @@ const isProd = process.env.NODE_ENV === 'production'
 const nextConfig = {
   reactStrictMode: false,
   output: "export",
-  basePath: "/example-ios-chat-next",
+  basePath: isProd ? "/example-ios-chat-next" : undefined,
   assetPrefix: isProd ? 'https://keepgo-studio.github.io/example-ios-chat-next' : undefined
 };
 
